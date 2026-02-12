@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gujrati Trader</title>
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8fbff;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        margin-top: 10px;
+        box-shadow: 0 0 20px rgba(100, 149, 237, 0.4);
+    }
+
+    h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-top: 20px;
+        color: #000;
+    }
+
+    p {
+        font-size: 16px;
+        color: #444;
+        margin: 5px 0;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 35px;
+        background-color: #ff2d2d;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 18px;
+        cursor: pointer;
+        text-decoration: none;
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(255, 45, 45, 0.6); }
+        70% { box-shadow: 0 0 0 15px rgba(255, 45, 45, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(255, 45, 45, 0); }
+    }
+
+    .section {
+        margin-top: 30px;
+    }
+
+    .profit-box {
+        background: #eaf8e5;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        text-align: left;
+        height: 180px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .profit-entry {
+        font-size: 15px;
+        margin: 8px 0;
+        color: #222;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .profit-amount {
+        color: #00a650;
+        font-weight: bold;
+    }
+
+    footer {
+        margin-top: 30px;
+        font-size: 13px;
+        color: #666;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo placed in public_html/logo.jpg -->
+    <img src="logo.jpg" alt="Logo" class="logo">
+    
+    <h1>GUJRATI TRADER</h1>
+    <p>📈 India’s Best Stock Market Channel</p>
+    <p>Start your jackpot profit journey today!</p>
+
+    <!-- Updated Telegram Link -->
+    <a href="https://t.me/+su4W7gxthzEwMmVl" class="btn" target="_blank">JOIN OUR TELEGRAM</a>
+
+    <div class="section">
+        <p>All calls based on Technical and Fundamental analysis by SEBI Registered Analysts 📊</p>
+        <p>Intraday, Options, NIFTY & BANKNIFTY Calls 📉📈</p>
+    </div>
+
+    <div class="section">
+        <h2>💸 Live Client Profit</h2>
+        <div class="profit-box" id="profitBox"></div>
+    </div>
+
+    <footer>
+        © 2025 Gujrati Trader | All Rights Reserved
+    </footer>
+</div>
+
+<script>
+    const profitBox = document.getElementById("profitBox");
+
+    const names = ["Rajesh", "Priya", "Anil", "Kiran", "Neha", "Suresh", "Divya", "Vikram", "Pooja", "Ravi", "Sneha", "Amit", "Deepa", "Karthik"];
+    
+    function generateProfit() {
+        const name = names[Math.floor(Math.random() * names.length)];
+        const amount = (Math.random() * 5000 + 500).toFixed(2);
+        const entry = document.createElement("div");
+        entry.classList.add("profit-entry");
+        entry.innerHTML = `<span>💹 ${name}</span> <span class='profit-amount'>+₹${amount}</span>`;
+        profitBox.prepend(entry);
+
+        if (profitBox.childElementCount > 6) {
+            profitBox.removeChild(profitBox.lastChild);
+        }
+    }
+
+    setInterval(generateProfit, 2000);
+</script>
+
+</body>
+</html>
